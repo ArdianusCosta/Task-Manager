@@ -13,7 +13,7 @@ export default function Navbar() {
             <div className="flex items-center gap-4 md:gap-8 lg:gap-16 flex-1">
                 <button
                     onClick={toggle}
-                    className="p-2 -ml-2 lg:hidden hover:bg-gray-50 rounded-xl transition-colors"
+                    className="p-2 -ml-2 lg:hidd\en hover:bg-gray-50 rounded-xl transition-colors"
                 >
                     <Menu className="w-6 h-6 text-black" />
                 </button>
