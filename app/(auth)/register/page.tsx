@@ -4,10 +4,9 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Card, CardContent } from "@/components/ui/card"
 import { Label } from "@/components/ui/label"
-import { Separator } from "@/components/ui/separator"
-import { Checkbox } from "@/components/ui/checkbox"
 import { Check } from "lucide-react"
-import Link from "next/link";
+import Link from "next/link"
+
 
 const GoogleIcon = ({ className }: { className?: string }) => (
   <svg viewBox="0 0 24 24" className={className} fill="currentColor">
@@ -23,7 +22,7 @@ const GitHubIcon = ({ className }: { className?: string }) => (
   </svg>
 )
 
-export default function Login() {
+export default function Register() {
   return (
     <div className="min-h-screen bg-[#FAF8F1] flex items-center justify-center p-4 md:p-8 relative overflow-hidden">
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none"
@@ -56,15 +55,12 @@ export default function Login() {
                   GitHub
                 </Button>
               </div>
-              <div className="relative mb-8">
-                <div className="absolute inset-0 flex items-center">
-                  <Separator className="w-full opacity-50" />
-                </div>
-                <div className="relative flex justify-center text-[10px] uppercase">
-                  <span className="bg-white px-4 text-gray-400 font-black tracking-[0.2em]">
-                    OR CONTINUE WITH EMAIL
-                  </span>
-                </div>
+              <div className="space-y-2 mb-5">
+                <Label className="text-xs font-black uppercase tracking-wider text-gray-500 ml-1">Username</Label>
+                <Input
+                  placeholder="Username"
+                  className="h-12 border-gray-200 bg-gray-50/30 focus-visible:ring-black rounded-xl transition-all font-medium placeholder:text-gray-300"
+                />
               </div>
               <div className="space-y-2 mb-5">
                 <Label className="text-xs font-black uppercase tracking-wider text-gray-500 ml-1">Email Address</Label>
@@ -76,7 +72,6 @@ export default function Login() {
               <div className="space-y-2 mb-8">
                 <div className="flex justify-between items-center ml-1">
                   <Label className="text-xs font-black uppercase tracking-wider text-gray-500">Password</Label>
-                  <button className="text-[11px] font-black text-gray-400 hover:text-black uppercase tracking-wider transition-colors">Forgot?</button>
                 </div>
                 <Input
                   type="password"
@@ -84,23 +79,24 @@ export default function Login() {
                   className="h-12 border-gray-200 bg-gray-50/30 focus-visible:ring-black rounded-xl transition-all font-mono placeholder:text-gray-300"
                 />
               </div>
-              <div className="flex items-center space-x-3 mb-8 ml-1">
-                <Checkbox id="remember" className="w-5 h-5 border-gray-300 rounded-md data-[state=checked]:bg-black data-[state=checked]:border-black transition-all" />
-                <label
-                  htmlFor="remember"
-                  className="text-xs font-bold text-gray-400 cursor-pointer select-none hover:text-gray-600 transition-colors"
-                >
-                  Remember this device for 30 days
-                </label>
+              <div className="space-y-2 mb-8">
+                <div className="flex justify-between items-center ml-1">
+                  <Label className="text-xs font-black uppercase tracking-wider text-gray-500">Confirm Password</Label>
+                </div>
+                <Input
+                  type="password"
+                  placeholder="••••••••"
+                  className="h-12 border-gray-200 bg-gray-50/30 focus-visible:ring-black rounded-xl transition-all font-mono placeholder:text-gray-300"
+                />
               </div>
               <Button className="w-full h-12 bg-black hover:bg-black/90 text-white font-black rounded-xl shadow-xl shadow-black/10 transition-transform active:scale-[0.98]">
                 Sign In to Workspace
               </Button>
-              <Link href="/register">
-                <p className="text-xs text-center text-gray-400 mt-8 font-bold">
-                  New user? <button className="cursor-pointer text-black font-black hover:underline underline-offset-4 tracking-tight">Generate access</button>
-                </p>
-              </Link>
+              <p className="text-xs text-center text-gray-400 mt-8 font-bold">
+                Have account?<Link href={"login"}>
+                    <button className="cursor-pointer text-black font-black hover:underline underline-offset-4 tracking-tight">Access here</button>
+                </Link>
+              </p>
             </CardContent>
           </Card>
           <div className="flex gap-6 text-[10px] font-black uppercase tracking-widest text-gray-300 mt-2 ml-1">
